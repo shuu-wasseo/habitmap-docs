@@ -12,10 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3       
-    - name: Install MDBook
-      run: cargo install mdbook
-    - name: Install MDBook Katex
-      run: cargo install mdbook-katex
     - name: Run tests # This creates the IO docs
       run: cargo test --verbose     
     - name: Build Book
