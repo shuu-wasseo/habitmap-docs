@@ -84,7 +84,7 @@ $ hbmp habit -l
     - habit1
     - habit2
 
-$ hbmp -m habit1 habit2
+$ hbmp habit -m habit1 habit2
     you have the following habits:
     - habit2
     - habit1
@@ -100,6 +100,11 @@ usage: `hbmp habit -s [habit] [stepno]`
 
 sets the default number of steps for [habit] to [stepno].
 having one step would mean that you either have or have not done the habit but having more steps allows you to indicate anything in between.
+
+```
+$ hbmp habit -s habit1 4
+    stepno for habit1 changed to 4.
+```
 
 | value  | type |
 | -----  | ---- |
