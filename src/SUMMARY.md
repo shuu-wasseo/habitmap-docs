@@ -2,7 +2,7 @@
 
 [intro](README.md)
 
-- [installation](installation.md)
+- [install](install.md)
 - [commands](commands/README.md)
     - [habit](commands/habit.md)
     - [map](commands/map.md)
