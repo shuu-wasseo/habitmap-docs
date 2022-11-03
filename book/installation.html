@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html" class="active"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">2.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">2.3.</strong> misc</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html" class="active"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">2.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">2.3.</strong> misc</a></li></ol></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> configuration</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,6 +143,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="installation"><a class="header" href="#installation">installation</a></h1>
+<p>welcome to the installation instructions page!</p>
+<h2 id="requirements"><a class="header" href="#requirements">requirements</a></h2>
+<ul>
+<li>python 3 (3.10 and up)</li>
+<li>any working command line / terminal</li>
+</ul>
+<h2 id="installation-1"><a class="header" href="#installation-1">installation</a></h2>
+<p>firstly, clone this repository.</p>
+<pre><code>$ git clone https://github.com/shuu-wasseo/habitmap
+</code></pre>
+<p>secondly, add the habitmap directory into your PATH. 
+thirdly, make the hbmp file executable with the following code.</p>
+<pre><code>$ cd habitmap
+$ chmod +x hbmp
+</code></pre>
+<p>lastly, enter the following in your browser to install all relevant and necessary packages.</p>
+<pre><code>$ make install
+</code></pre>
+<p>now, you are able to use habitmap! enter &quot;hbmp&quot; in your terminal to begin!</p>
 
                     </main>
 
@@ -173,6 +192,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
