@@ -12,8 +12,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3       
-    - name: Run tests # This creates the IO docs
-      run: cargo test --verbose     
     - name: Build Book
       run: mdbook build ./docs/ioreference
     - name: Build doc
