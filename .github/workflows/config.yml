@@ -12,8 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3       
-    - name: install mbook
-      run: cargo install mbook
+    - name: install mdbook
+      run: cargo install mdbook
     - name: Build Book
       run: mdbook build ./docs/ioreference
     - name: Deploy
