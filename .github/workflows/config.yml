@@ -1,26 +1,29 @@
-name: github pages
+name: Docs
 
+# We document the main branch
 on:
   push:
-    branches:
-      - gh-pages
+    branches: [ main ]  
+env:
+  CARGO_TERM_COLOR: always
 
 jobs:
-  deploy:
-    runs-on: ubuntu-18.04
+  docs:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Setup mdBook
-        uses: peaceiris/actions-mdbook@v1
-        with:
-          #mdbook-version: 
-          mdbook-version: 'latest'
-
-      - run: mdbook build
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./book
+    - uses: actions/checkout@v3       
+    - name: Install MDBook
+      run: cargo install mdbook
+    - name: Install MDBook Katex
+      run: cargo install mdbook-katex
+    - name: Run tests # This creates the IO docs
+      run: cargo test --verbose     
+    - name: Build Book
+      run: mdbook build ./docs/ioreference
+    - name: Build doc
+      run: RUSTDOCFLAGS="--html-in-header katex.html" cargo doc --no-deps --document-private-items --target-dir ./docs/rustdoc
+    - name: Deploy
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+        branch: gh-pages # The branch the action should deploy to.
+        folder: docs # The folder the action should deploy.
