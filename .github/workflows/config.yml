@@ -16,10 +16,8 @@ jobs:
       run: cargo install mbook
     - name: Build Book
       run: mdbook build ./docs/ioreference
-    - name: Build doc
-      run: RUSTDOCFLAGS="--html-in-header katex.html" cargo doc --no-deps --document-private-items --target-dir ./docs/rustdoc
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@4.1.5
       with:
         branch: gh-pages # The branch the action should deploy to.
-        folder: docs # The folder the action should deploy.
+        folder: book # The folder the action should deploy.
