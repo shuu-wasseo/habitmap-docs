@@ -3,7 +3,7 @@ name: Docs
 # We document the main branch
 on:
   push:
-    branches: [ book ]  
+    branches: [ main ]  
 env:
   CARGO_TERM_COLOR: always
 
