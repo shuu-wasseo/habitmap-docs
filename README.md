@@ -1,4 +1,4 @@
-# intro
+# habitmap docs
 welcome to the habitmap docs!
 
 ## contribute
