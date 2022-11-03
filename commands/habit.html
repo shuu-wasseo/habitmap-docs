@@ -205,7 +205,7 @@ $ hbmp habit -t yst habit2 2
     - habit1
     - habit2
 
-$ hbmp -m habit1 habit2
+$ hbmp habit -m habit1 habit2
     you have the following habits:
     - habit2
     - habit1
@@ -218,6 +218,9 @@ $ hbmp -m habit1 habit2
 <p>usage: <code>hbmp habit -s [habit] [stepno]</code></p>
 <p>sets the default number of steps for [habit] to [stepno].
 having one step would mean that you either have or have not done the habit but having more steps allows you to indicate anything in between.</p>
+<pre><code>$ hbmp habit -s habit1 4
+    stepno for habit1 changed to 4.
+</code></pre>
 <div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
 <tr><td>habit</td><td>habit</td></tr>
 <tr><td>stepno</td><td>stepno</td></tr>
