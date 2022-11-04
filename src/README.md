@@ -6,7 +6,7 @@ habitmap is a command-line app to track your habits and visualise how committed 
 habitmap allows you to:
 - add and remove habits
 - track your habits
-- customise how many steps each habit has (see the explanation on steps [here](commands/habit.md/#steps))
+- customise how many steps each habit has (see the explanation on steps [here](https://shuu-wasseo.github.io/habitmap-docs/commands/index.html#steps))
 - print out several types of heatmaps based on each habit
 - customise the colors in the heatmaps + make your own aliases for the colors!
 
