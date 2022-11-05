@@ -184,7 +184,7 @@ $ chmod +x hbmp
 <p>now, you are able to use habitmap! enter &quot;hbmp&quot; in your terminal to begin!</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="commands"><a class="header" href="#commands">commands</a></h1>
 <p>here is the full list of commands as seen when running hbmp with no commands or arguments.</p>
-<pre><code>usage: hbmp [command] ([argument] [subargs] ([optional args]))
+<pre><code>usage: hbmp [command] ([subcommand] [parameters] ([options]))
 
 list of commands, parameters and options:
 command:
@@ -261,11 +261,10 @@ for example, if a habit with stepno 3 has its stepno changed to 2, the data will
 <tr><td>habit</td><td>[habit]/[habit2] (habit -r/t/m/s, map -y)</td><td>name of any existing habit.</td></tr>
 <tr><td>number</td><td>[number] (habit -t), [stepno] (habit -s)</td><td>any number from 0-4 as long as it is below the habit's stepno.</td></tr>
 <tr><td>stepno</td><td>[stepno] (habit -s)</td><td>any number from 1-4.</td></tr>
-<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>any hex code without the preceding '#'.<sup class="footnote-reference"><a href="#2">2</a></sup></td></tr>
+<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>any hex code without the preceding '#'<sup class="footnote-reference"><a href="#2">2</a></sup> or any <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit">4-bit colors</a>.</td></tr>
 <tr><td>day</td><td>[day] (habit -t), [start]/[end] (map -d/b)</td><td>any date in ISO format (YYYY-MM-DD), 'tdy', 'yst' or the first three letters of any day in the week.</td></tr>
 <tr><td>month</td><td>[start]/[end] (map -m/b)</td><td>any month in ISO format. (YYYY-MM, date without last two digits / day)</td></tr>
 <tr><td>year</td><td>[start]/[end] (map -y/b)</td><td>any year from 1 - 9999 AD. (without the 'AD')</td></tr>
-<tr><td>duration</td><td>[duration] (map -b)</td><td>'week', 'month' or 'year'.</td></tr>
 </tbody></table>
 </div>
 <div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
@@ -309,7 +308,7 @@ $ hbmp habit -t yst habit2 2
     habit1 (4)? 4
     value of habit habit1 on 1969-06-09 changed to 4 of 4.
     habit2 (3)? 3
-    value of habit habit2 on 1969-06-09 changed to 3 of 3 (4 in 4-step).
+    value of habit habit2 on 1969-06-09 changed to 2 of 3 (3 in 4-step).
 </code></pre>
 <div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
 <tr><td>day</td><td>day</td></tr>
@@ -355,6 +354,83 @@ having one step would mean that you either have or have not done the habit but h
 <tr><td>stepno</td><td>stepno</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="map"><a class="header" href="#map">map</a></h1>
+<p>this page will explain the &quot;habit&quot; command.</p>
+<p>to refer to the definition/description of any value type, see <a href="commands/index.html/#value-types">commands</a>.</p>
+<h2 id="-d---day"><a class="header" href="#-d---day">-d, --day</a></h2>
+<p>usage:<code>hbmp map -d [start] [end] ([colors])</code> </p>
+<p>displays a single bar of each habit's data from [start] to [end] as well as the overall completion of each day's habits, optionally in [colors].</p>
+<p>example with 4-step habit1 and 3-step habit2 on 1969-4-20:</p>
+<pre><code>$ hbmp habit -t tdy
+    habit1? (4) 4
+    value of habit habit1 on 1969-4-20 changed to 4 of 4.
+    habit2? (3) 2
+    value of habit habit2 on 1969-4-20 changed to 2 of 3 (3 in 4-step).
+
+$ hbmp map -d tdy tdy
+         yy 69
+         mm 04
+         dd 20
+     habit1 ██
+     habit2 ▓▓
+    overall ▓▓
+            88
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
+<tr><td>start, end</td><td>any day/month/year</td></tr>
+<tr><td>colors</td><td>any number of colors</td></tr>
+</tbody></table>
+</div>
+<h2 id="-b---bydur"><a class="header" href="#-b---bydur">-b, --bydur</a></h2>
+<p>usage: <code>hbmp habit -b [start] [end] [duration] ([colors])</code></p>
+<p>displays a single bar of each habit's data from [start] to [end] based on average for every [duration], optionally in [colors].</p>
+<p>output is similar to <a href="commands/map.html#-d---day"> -d | --day</a>.</p>
+<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
+<tr><td>start, end</td><td>any day/month/year</td></tr>
+<tr><td>duration</td><td>'week', 'month', or 'year'</td></tr>
+<tr><td>colors</td><td>any number of colors</td></tr>
+</tbody></table>
+</div>
+<h2 id="-y---year"><a class="header" href="#-y---year">-y, --year</a></h2>
+<p>usage: <code>hbmp map -y [year] [habit] ([colors])</code></p>
+<p>displays a calendar heatmap of the data in [habit] for [year], optionally in [colors].</p>
+<p>example with 4-step habit1:</p>
+<pre><code>$ hbmp habit -t tdy habit1 4
+    value of habit habit1 on 1969-4-20 changed to 4 of 4.
+
+$ hbmp map -y 1969 habit1
+        01        02      03      04        05      06      07        08      09      10        11      12
+    sun                                                                                                           
+    mon                                                                                                           
+    tue                                                                                                           
+    wed                                 ██                                                                        
+    thu                                                                                                           
+    fri                                                                                                           
+    sat                                                                                                           
+</code></pre>
+<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
+<tr><td>habit</td><td>habit</td></tr>
+<tr><td>year</td><td>year</td></tr>
+<tr><td>colors</td><td>any number of colors</td></tr>
+</tbody></table>
+</div>
+<h2 id="colors"><a class="header" href="#colors">colors</a></h2>
+<p>it has been specified that colors can be any hex code (without preceding '#') or any 4-bit color,</p>
+<p>let's use the example in <a href="commands/map.html#-y---year"> -y | --year</a>, but switch it up a little.</p>
+<pre><code>$ hbmp habit -t tdy habit1 4
+    value of habit habit1 on 1969-4-20 changed to 4 of 4.
+
+$ hbmp map -y 1969 habit1 red
+</code></pre>
+<p><img src="commands/red.jpg" alt="output of &quot;hbmp map -y 1969 habit1&quot;. due to site limitations, we will only be able to display the output through an image." />
+as you can see, the one square is now red.</p>
+<p>colors can also take as many arguments as you would like. if there are multiple arguments, each column will be the same color, and the order of the colors is the same order in which they would be entered.</p>
+<p>if there are more columns than colors given, the colors will then repeat themselves in the same sequence over and over again.</p>
+<p>let's follow up to the example in <a href="commands/map.html#-d---day"> -d | --day</a> this time, but imagine you have committed to the habits at the same rate for all 7 days of that week.</p>
+<pre><code>$ hbmp map -d sun sat red green blue
+</code></pre>
+<p><img src="commands/rgb.jpg" alt="output of &quot;hbmp map -y 1969 habit1&quot;. due to site limitations, we will only be able to display the output through an image. &gt;&lt;" />
+as you can see, the red-green-blue pattern repeats until there are no more columns left.</p>
+<p>if there are less columns than colors given, the last colors with no columns will simply be ignored.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="misc"><a class="header" href="#misc">misc</a></h1>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">configuration</a></h1>
 
