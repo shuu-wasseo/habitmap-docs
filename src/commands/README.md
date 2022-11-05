@@ -78,6 +78,8 @@ while these characters do not look like squares on this site, they resemble squa
 do note that changing the stepno of a habit will not change its data. 
 for example, if a habit with stepno 3 has its stepno changed to 2, the data will remain in its original form.
 
+[^1]: while 1/3 and 2/3 are both closer to 2/4 (1/2) than 1/4 and 3/4 respectively, making them both 2/4 would mean they would be indistinguishable in maps. giving these two values different values when the stepno is changed to 4 maintains a clear difference between 1/3 and 2/3.
+
 ## value types
 in the parameters and options lists, multiple types of values can be seen.
 
@@ -93,5 +95,4 @@ in the parameters and options lists, multiple types of values can be seen.
 | year       | [start]/[end] (map -y/b)                   | any year from 1 - 9999 AD. (without the 'AD') |
 | duration   | [duration] (map -b)                        | 'week', 'month' or 'year'. | 
 
-[^1]: while 1/3 and 2/3 are both closer to 2/4 (1/2) than 1/4 and 3/4 respectively, making them both 2/4 would mean they would be indistinguishable in maps. giving these two values different values when the stepno is changed to 4 maintains a clear difference between 1/3 and 2/3.
 [^2]: due to the fact that python ignores arguments or options starting with '#', hex codes should be provided without a preceding '#' in the console. for standardisation, hex codes in the config.toml file should also not have a preceding '#'.
