@@ -72,7 +72,7 @@ $ hbmp map -y 1969 habit1
 | colors | any number of colors |
 
 ## colors
-it has been specified that colors can be any hex code (without preceding '#') or any 4-bit color,
+it has been specified that here, a color can be any hex code (without preceding '#') or any 4-bit color, but the optional parameter ([colors]) is a bit more complicated than just that.
 
 let's use the example in [ -y | --year](#-y---year), but switch it up a little.
 ```
@@ -83,6 +83,7 @@ $ hbmp map -y 1969 habit1 red
 ```
 ![output of "hbmp map -y 1969 habit1". due to site limitations, we will only be able to display the output through an image.](red.jpg)
 as you can see, the one square is now red.
+while this is the basic use of the ([colors]) parameter, we can still take this to another level.
 
 colors can also take as many arguments as you would like. if there are multiple arguments, each column will be the same color, and the order of the colors is the same order in which they would be entered.
 
