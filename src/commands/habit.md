@@ -54,8 +54,8 @@ $ hbmp habit -t tdy
 
 | value  | type |
 | -----  | ---- |
-| day    | day 
-| habit  | habit
+| day    | day  |
+| habit  | habit |
 | number | number from 0 to [habit]'s stepno. | 
 
 ## -l, --list
