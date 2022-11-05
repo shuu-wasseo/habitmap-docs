@@ -49,7 +49,7 @@ $ hbmp habit -t tdy
     habit1 (4)? 4
     value of habit habit1 on 1969-06-09 changed to 4 of 4.
     habit2 (3)? 3
-    value of habit habit2 on 1969-06-09 changed to 3 of 3 (4 in 4-step).
+    value of habit habit2 on 1969-06-09 changed to 2 of 3 (3 in 4-step).
 ```
 
 | value  | type |
