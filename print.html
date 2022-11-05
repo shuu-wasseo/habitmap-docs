@@ -414,7 +414,7 @@ $ hbmp map -y 1969 habit1
 </tbody></table>
 </div>
 <h2 id="colors"><a class="header" href="#colors">colors</a></h2>
-<p>it has been specified that colors can be any hex code (without preceding '#') or any 4-bit color,</p>
+<p>it has been specified that here, a color can be any hex code (without preceding '#') or any 4-bit color, but the optional parameter ([colors]) is a bit more complicated than just that.</p>
 <p>let's use the example in <a href="commands/map.html#-y---year"> -y | --year</a>, but switch it up a little.</p>
 <pre><code>$ hbmp habit -t tdy habit1 4
     value of habit habit1 on 1969-4-20 changed to 4 of 4.
@@ -422,7 +422,8 @@ $ hbmp map -y 1969 habit1
 $ hbmp map -y 1969 habit1 red
 </code></pre>
 <p><img src="commands/red.jpg" alt="output of &quot;hbmp map -y 1969 habit1&quot;. due to site limitations, we will only be able to display the output through an image." />
-as you can see, the one square is now red.</p>
+as you can see, the one square is now red.
+while this is the basic use of the ([colors]) parameter, we can still take this to another level.</p>
 <p>colors can also take as many arguments as you would like. if there are multiple arguments, each column will be the same color, and the order of the colors is the same order in which they would be entered.</p>
 <p>if there are more columns than colors given, the colors will then repeat themselves in the same sequence over and over again.</p>
 <p>let's follow up to the example in <a href="commands/map.html#-d---day"> -d | --day</a> this time, but imagine you have committed to the habits at the same rate for all 7 days of that week.</p>
