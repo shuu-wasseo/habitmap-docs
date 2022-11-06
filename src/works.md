@@ -9,12 +9,15 @@ if a habit only has the option to be marked as done or not done, we count that a
 if a habit has two steps, one would be allowed to mark the habit as done, undone or half-done. 
 similar rules apply for three or four steps.
 
+here is an example for a habit with 4 steps.
+
 | x in step x of y     | desc |
 | ----------------     | ---- |
 | 0                    | the habit has not been done at all. |
-| 1                    | the user is one step closer to his goal for the day. |
-| ...                  | ...  |
-| y (e.g. 4 if y is 4) | the user's goal for the day is reached. |
+| 1                    | the user is one step closer to their goal (for the day). |
+| 2                    | the user is halfway towards their goal. |
+| 3                    | the user is one step away from their goal. |
+| 4                    | the user's goal for the day is reached. |
 
 the stepno for any habit is the number of steps that habit has. due to the limitations of the characters that can be printed, the max stepno is 4.
 
