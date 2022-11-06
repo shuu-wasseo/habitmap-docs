@@ -72,7 +72,7 @@ $ hbmp map -y 1969 habit1
 | colors | any number of colors |
 
 ## colors
-it has been specified that here, a color can be any hex code (without preceding '#') or any 4-bit color, but the optional parameter ([colors]) is a bit more complicated than just that.
+it has been specified that here, a color can be any hex code (without preceding '#'), any [custom color name](https://shuu-wasseo.github.io/habitmap-docs/configuration.html#custom-colors) any 4-bit color, but the optional parameter ([colors]) is a bit more complicated than just that.
 
 let's use the example in [ -y | --year](#-y---year), but switch it up a little.
 ```
