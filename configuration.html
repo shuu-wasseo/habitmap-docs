@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">2.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">2.3.</strong> misc</a></li></ol></li><li class="chapter-item expanded "><a href="configuration.html" class="active"><strong aria-hidden="true">3.</strong> configuration</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="configuration.html" class="active"><strong aria-hidden="true">3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">4.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">4.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">4.3.</strong> misc</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,15 +143,35 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="configuration"><a class="header" href="#configuration">configuration</a></h1>
+<p>you can use the config.toml file to configure habitmap. currently, there are only three things to configure.</p>
+<h2 id="default-stepno"><a class="header" href="#default-stepno">default stepno</a></h2>
+<p>default value: <code>stepno = 4</code></p>
+<p>everytime a new habit is made, its stepno will by this number by default.</p>
+<h2 id="default-color"><a class="header" href="#default-color">default color</a></h2>
+<p>default value: <code>defcol = ['ffffff']</code></p>
+<p>everytime a map is printed without specifying colors, these colors are used instead. you can put a single color or multiple colors here, but make sure they are in the form of a list or array.</p>
+<p>having the default colors ['red', 'green', 'blue'] would have the same effect as manually typing 'red green blue' at the end of each command. do note that you can also put <a href="#custom-colors">custom color names</a> here.</p>
+<h2 id="custom-colors"><a class="header" href="#custom-colors">custom colors</a></h2>
+<p>default value: <code>cols = []</code></p>
+<p>any custom colors can be placed here. cols should be a list of lists in the format ['name/alias', 'color'] where 'color' is of any format specified <a href="commands/index.html#value-types">here</a>.</p>
+<p>for example:</p>
+<pre><code>cols = [
+    ['color1', 'fc0099'],
+    ['color2', 'ffcc00']
+]
+</code></pre>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="commands/misc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="works.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
+                            <a rel="next" href="commands/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
 
                         <div style="clear: both"></div>
                     </nav>
@@ -159,10 +179,13 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="commands/misc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="works.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
+                    <a rel="next" href="commands/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
             </nav>
 
         </div>
