@@ -11,7 +11,7 @@ similar rules apply for three or four steps.
 
 here is an example for a habit with 4 steps.
 
-| x in step x of y     | desc |
+| x in step x of 4     | desc |
 | ----------------     | ---- |
 | 0                    | the habit has not been done at all. |
 | 1                    | the user is one step closer to their goal (for the day). |
