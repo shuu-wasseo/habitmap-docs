@@ -1,5 +1,5 @@
 # map
-this page will explain the "habit" command.
+this page will explain the "map" command.
 
 to refer to the definition/description of any value type, see [commands](index.html/#value-types).
 

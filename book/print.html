@@ -82,7 +82,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">2.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">2.3.</strong> misc</a></li></ol></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> configuration</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="index.html">intro</a></li><li class="chapter-item expanded "><a href="installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="configuration.html"><strong aria-hidden="true">3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="commands/index.html"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="commands/habit.html"><strong aria-hidden="true">4.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="commands/map.html"><strong aria-hidden="true">4.2.</strong> map</a></li><li class="chapter-item expanded "><a href="commands/misc.html"><strong aria-hidden="true">4.3.</strong> misc</a></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -150,7 +150,7 @@
 <ul>
 <li>add and remove habits</li>
 <li>track your habits</li>
-<li>customise how many steps each habit has (see the explanation on steps <a href="commands/habit.html">here</a>)</li>
+<li>customise how many steps each habit has (see the explanation on steps <a href="https://shuu-wasseo.github.io/habitmap-docs/commands/index.html#steps">here</a>)</li>
 <li>print out several types of heatmaps based on each habit</li>
 <li>customise the colors in the heatmaps + make your own aliases for the colors!</li>
 </ul>
@@ -181,41 +181,15 @@ $ chmod +x hbmp
 <p>lastly, enter the following in your browser to install all relevant and necessary packages.</p>
 <pre><code>$ make install
 </code></pre>
-<p>now, you are able to use habitmap! enter &quot;hbmp&quot; in your terminal to begin!</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="commands"><a class="header" href="#commands">commands</a></h1>
-<p>here is the full list of commands as seen when running hbmp with no commands or arguments.</p>
-<pre><code>usage: hbmp [command] ([subcommand] [parameters] ([options]))
-
-list of commands, parameters and options:
-command:
--a, --arg.      [parameter]                 ([option])              description
-
-habit:
--a, --add       [name]                                              add a new habit (if not already existing).
--r, --remove    [habit]                                             remove a habit.
--t, --track     [day]                       ([habit] [number])      add or edit a record.
--l, --list                                                          list all habits.
--m, --move      [habit] [habit2]                                    moves one habit after another habit.
--s, --steps     [habit] [stepno]                                    set the default number of steps in heatmap (number from 1-4)
-
-map:
--d, --day       [start] [end]               ([colors])              view heatmap for all habits from one day to another.
--m, --month     [start] [end]               ([colors])              view heatmap for all habits from the start of a month to the beginning of another.
--y, --year      [year] [habit]              ([colors])              view yearly calendar heatmap for a habit.
--b, --bydur     [start] [end] [duration]    ([colors])              view heatmap based on average of week/month/year.
-
-help:                                                               see all commands and explanations.
-
-samplecolors:                               ([colors])              see all custom colors or the given colors in the terminal.
+<p>if this is your first time using habitmap and you would like to start with a few sample habits, enter:</p>
+<pre><code>$ make setup
 </code></pre>
-<p>these four commands will be split into three pages.</p>
-<ol>
-<li><a href="commands/habit.html">habit</a></li>
-<li><a href="commands/map.html">map</a></li>
-<li><a href="commands/misc.html">misc</a></li>
-</ol>
+<p>if it runs correctly, it should add the habits 'exercise', 'hydrate' and 'meditate' before printing out the help message.</p>
+<p>now, you are able to use habitmap! enter &quot;hbmp&quot; in your terminal to begin!</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="how-it-works"><a class="header" href="#how-it-works">how it works</a></h1>
+<p>a brief introduction to how habitmap works. if this is your first time using habitmap, please read this before moving on to any other sections.</p>
 <h2 id="steps"><a class="header" href="#steps">steps</a></h2>
-<p>but before we begin, what are steps?</p>
+<p>what are steps?</p>
 <p>steps are the number of different values that any record can have. 
 if a habit only has the option to be marked as done or not done, we count that as one step.
 if a habit has two steps, one would be allowed to mark the habit as done, undone or half-done. 
@@ -254,6 +228,70 @@ for example, if a habit with stepno 3 has its stepno changed to 2, the data will
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>while 1/3 and 2/3 are both closer to 2/4 (1/2) than 1/4 and 3/4 respectively, making them both 2/4 would mean they would be indistinguishable in maps. giving these two values different values when the stepno is changed to 4 maintains a clear difference between 1/3 and 2/3.</p>
 </div>
+<h2 id="heatmaps"><a class="header" href="#heatmaps">heatmaps</a></h2>
+<p>what are heatmaps?</p>
+<p>heatmaps are a form of data presentation. according to oxford languages, heatmaps are:</p>
+<blockquote>
+<p>a representation of data in the form of a map or diagram in which data values are represented as colours.</p>
+</blockquote>
+<p>while there are many types of heatmaps, habitmap only uses the following three.</p>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: center">heatmap</th><th style="text-align: center">x-axis / column</th><th style="text-align: center">y-axis / row</th><th style="text-align: center">command (hbmp map)</th><th style="text-align: center">description</th></tr></thead><tbody>
+<tr><td style="text-align: center">daily</td><td style="text-align: center">day</td><td style="text-align: center">habit</td><td style="text-align: center">-d / --day</td><td style="text-align: center">allows you to see your progress in committing to each habit across multiple days.</td></tr>
+<tr><td style="text-align: center">average per duration</td><td style="text-align: center">duration (week/month/year)</td><td style="text-align: center">habit</td><td style="text-align: center">-b / --bydur</td><td style="text-align: center">similar to the daily heatmap, but you can view your average across a few weeks or months to more easily visualise long-term progress.</td></tr>
+<tr><td style="text-align: center">yearly calendar</td><td style="text-align: center">week</td><td style="text-align: center">day of the week</td><td style="text-align: center">-y / --year</td><td style="text-align: center">similar to the github contributions heatmap at the bottom of the user profile, but only allows <strong>one</strong> habit and across <strong>one</strong> year.</td></tr>
+</tbody></table>
+</div>
+<p>for more details on how to use these, see <a href="commands/map.html">map</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">configuration</a></h1>
+<p>you can use the config.toml file to configure habitmap. currently, there are only three things to configure.</p>
+<h2 id="default-stepno"><a class="header" href="#default-stepno">default stepno</a></h2>
+<p>default value: <code>stepno = 4</code></p>
+<p>everytime a new habit is made, its stepno will by this number by default.</p>
+<h2 id="default-color"><a class="header" href="#default-color">default color</a></h2>
+<p>default value: <code>defcol = ['ffffff']</code></p>
+<p>everytime a map is printed without specifying colors, these colors are used instead. you can put a single color or multiple colors here, but make sure they are in the form of a list or array.</p>
+<p>having the default colors ['red', 'green', 'blue'] would have the same effect as manually typing 'red green blue' at the end of each command. do note that you can also put custom color names here.</p>
+<h2 id="custom-colors"><a class="header" href="#custom-colors">custom colors</a></h2>
+<p>default value: <code>cols = []</code></p>
+<p>any custom colors can be placed here. cols should be a list of lists in the format ['name/alias', 'color'] where 'color' is of any format specified <a href="index.html/#value-types">here</a>.</p>
+<p>for example:</p>
+<pre><code>cols = [
+    ['color1', 'fc0099'],
+    ['color2', 'ffcc00']
+]
+</code></pre>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="commands"><a class="header" href="#commands">commands</a></h1>
+<p>here is the full list of commands as seen when running hbmp with no commands or arguments.</p>
+<pre><code>usage: hbmp [command] ([subcommand] [parameters] ([options]))
+
+list of commands, parameters and options:
+command:
+-a, --arg.      [parameter]                 ([option])              description
+
+habit:
+-a, --add       [name]                                              add a new habit (if not already existing).
+-r, --remove    [habit]                                             remove a habit.
+-t, --track     [day]                       ([habit] [number])      add or edit a record.
+-l, --list                                                          list all habits.
+-m, --move      [habit] [habit2]                                    moves one habit after another habit.
+-s, --steps     [habit] [stepno]                                    set the default number of steps in heatmap (number from 1-4)
+
+map:
+-d, --day       [start] [end]               ([colors])              view heatmap for all habits from one day to another.
+-m, --month     [start] [end]               ([colors])              view heatmap for all habits from the start of a month to the beginning of another.
+-y, --year      [year] [habit]              ([colors])              view yearly calendar heatmap for a habit.
+-b, --bydur     [start] [end] [duration]    ([colors])              view heatmap based on average of week/month/year.
+
+help:                                                               see all commands and explanations.
+
+samplecolors:                               ([colors])              see all custom colors or the given colors in the terminal.
+</code></pre>
+<p>these four commands will be split into three pages.</p>
+<ol>
+<li><a href="commands/habit.html">habit</a></li>
+<li><a href="commands/map.html">map</a></li>
+<li><a href="commands/misc.html">misc</a></li>
+</ol>
 <h2 id="value-types"><a class="header" href="#value-types">value types</a></h2>
 <p>in the parameters and options lists, multiple types of values can be seen.</p>
 <div class="table-wrapper"><table><thead><tr><th>value type</th><th>parameters/options</th><th>description</th></tr></thead><tbody>
@@ -261,13 +299,13 @@ for example, if a habit with stepno 3 has its stepno changed to 2, the data will
 <tr><td>habit</td><td>[habit]/[habit2] (habit -r/t/m/s, map -y)</td><td>name of any existing habit.</td></tr>
 <tr><td>number</td><td>[number] (habit -t), [stepno] (habit -s)</td><td>any number from 0-4 as long as it is below the habit's stepno.</td></tr>
 <tr><td>stepno</td><td>[stepno] (habit -s)</td><td>any number from 1-4.</td></tr>
-<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>any hex code without the preceding '#'<sup class="footnote-reference"><a href="#2">2</a></sup> or any <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit">4-bit colors</a>.</td></tr>
+<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>any hex code without the preceding '#'<sup class="footnote-reference"><a href="#1">1</a></sup> or any <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit">4-bit colors</a>.</td></tr>
 <tr><td>day</td><td>[day] (habit -t), [start]/[end] (map -d/b)</td><td>any date in ISO format (YYYY-MM-DD), 'tdy', 'yst' or the first three letters of any day in the week.</td></tr>
 <tr><td>month</td><td>[start]/[end] (map -m/b)</td><td>any month in ISO format. (YYYY-MM, date without last two digits / day)</td></tr>
 <tr><td>year</td><td>[start]/[end] (map -y/b)</td><td>any year from 1 - 9999 AD. (without the 'AD')</td></tr>
 </tbody></table>
 </div>
-<div class="footnote-definition" id="2"><sup class="footnote-definition-label">2</sup>
+<div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
 <p>due to the fact that python ignores arguments or options starting with '#', hex codes should be provided without a preceding '#' in the console. for standardisation, hex codes in the config.toml file should also not have a preceding '#'.</p>
 </div>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="habit"><a class="header" href="#habit">habit</a></h1>
@@ -354,7 +392,7 @@ having one step would mean that you either have or have not done the habit but h
 <tr><td>stepno</td><td>stepno</td></tr>
 </tbody></table>
 </div><div style="break-before: page; page-break-before: always;"></div><h1 id="map"><a class="header" href="#map">map</a></h1>
-<p>this page will explain the &quot;habit&quot; command.</p>
+<p>this page will explain the &quot;map&quot; command.</p>
 <p>to refer to the definition/description of any value type, see <a href="commands/index.html/#value-types">commands</a>.</p>
 <h2 id="-d---day"><a class="header" href="#-d---day">-d, --day</a></h2>
 <p>usage:<code>hbmp map -d [start] [end] ([colors])</code> </p>
@@ -414,7 +452,7 @@ $ hbmp map -y 1969 habit1
 </tbody></table>
 </div>
 <h2 id="colors"><a class="header" href="#colors">colors</a></h2>
-<p>it has been specified that colors can be any hex code (without preceding '#') or any 4-bit color,</p>
+<p>it has been specified that here, a color can be any hex code (without preceding '#') or any 4-bit color, but the optional parameter ([colors]) is a bit more complicated than just that.</p>
 <p>let's use the example in <a href="commands/map.html#-y---year"> -y | --year</a>, but switch it up a little.</p>
 <pre><code>$ hbmp habit -t tdy habit1 4
     value of habit habit1 on 1969-4-20 changed to 4 of 4.
@@ -422,7 +460,8 @@ $ hbmp map -y 1969 habit1
 $ hbmp map -y 1969 habit1 red
 </code></pre>
 <p><img src="commands/red.jpg" alt="output of &quot;hbmp map -y 1969 habit1&quot;. due to site limitations, we will only be able to display the output through an image." />
-as you can see, the one square is now red.</p>
+as you can see, the one square is now red.
+while this is the basic use of the ([colors]) parameter, we can still take this to another level.</p>
 <p>colors can also take as many arguments as you would like. if there are multiple arguments, each column will be the same color, and the order of the colors is the same order in which they would be entered.</p>
 <p>if there are more columns than colors given, the colors will then repeat themselves in the same sequence over and over again.</p>
 <p>let's follow up to the example in <a href="commands/map.html#-d---day"> -d | --day</a> this time, but imagine you have committed to the habits at the same rate for all 7 days of that week.</p>
@@ -432,7 +471,36 @@ as you can see, the one square is now red.</p>
 as you can see, the red-green-blue pattern repeats until there are no more columns left.</p>
 <p>if there are less columns than colors given, the last colors with no columns will simply be ignored.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="misc"><a class="header" href="#misc">misc</a></h1>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="configuration"><a class="header" href="#configuration">configuration</a></h1>
+<p>this page will explain all other commands.</p>
+<p>to refer to the definition/description of any value type, see <a href="commands/index.html/#value-types">commands</a>.</p>
+<h2 id="help"><a class="header" href="#help">help</a></h2>
+<p>usage: <code>hbmp help</code></p>
+<p>this command prints out a comprehensive guide (although not as comprehensive as this site) on each command and how to use it.</p>
+<h2 id="samplecolors"><a class="header" href="#samplecolors">samplecolors</a></h2>
+<p>usage: <code>hbmp samplecolors ([colors])</code></p>
+<p>this command prints out colored text with either all colors in the config file or the given colors to allow the user to see if the colors work or fit well with their terminal.</p>
+<p>if left blank, this command defaults to all colors listed in the config file.</p>
+<pre><code>$ cat config.toml
+stepno = 4
+defcol = &quot;ffffff&quot;
+cols = [
+    [&quot;heejin&quot;, &quot;fc0099&quot;],
+    [&quot;hyunjin&quot;, &quot;ffcc00&quot;],
+    [&quot;haseul&quot;, &quot;00ff7b&quot;],
+    [&quot;yeojin&quot;, &quot;ff6e14&quot;],
+    [&quot;vivi&quot;, &quot;ff98b4&quot;]
+]
+
+$ hbmp samplecolors
+</code></pre>
+<p>the output of samplecolors will be multiple lines, each having &quot;██ [name] ([hex code if not 4-bit])&quot; in the color assigned to [name]. in this case:
+<img src="commands/samplecolors.jpg" alt="(sample) output of &quot;hbmp samplecolors&quot;. due to site limitations, we will only be able to display the output through an image." /></p>
+<p>if not left blank, this command will taken an unlimited amount of colors.</p>
+<pre><code>$ hbmp samplecolors red green blue
+```
+this time, the output will be in a similar format as before.
+![another (sample) output of &quot;hbmp samplecolors&quot;. due to site limitations, we will only be able to display the output through an image.](samplecolors2.jpg)
+</code></pre>
 
                     </main>
 
