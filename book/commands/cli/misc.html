@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>habit - habitmap docs</title>
+        <title>misc - habitmap docs</title>
 
 
         <!-- Custom HTML head -->
@@ -13,21 +13,21 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#ffffff" />
 
-        <link rel="icon" href="../favicon.svg">
-        <link rel="shortcut icon" href="../favicon.png">
-        <link rel="stylesheet" href="../css/variables.css">
-        <link rel="stylesheet" href="../css/general.css">
-        <link rel="stylesheet" href="../css/chrome.css">
-        <link rel="stylesheet" href="../css/print.css" media="print">
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
 
         <!-- Fonts -->
-        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
-        <link rel="stylesheet" href="../fonts/fonts.css">
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
 
         <!-- Highlight.js Stylesheets -->
-        <link rel="stylesheet" href="../highlight.css">
-        <link rel="stylesheet" href="../tomorrow-night.css">
-        <link rel="stylesheet" href="../ayu-highlight.css">
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
 
         <!-- Custom theme stylesheets -->
 
@@ -35,7 +35,7 @@
     <body>
         <!-- Provide site root to javascript -->
         <script>
-            var path_to_root = "../";
+            var path_to_root = "../../";
             var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
         </script>
 
@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">intro</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="../works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="../configuration.html"><strong aria-hidden="true">3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="../commands/index.html"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/habit.html" class="active"><strong aria-hidden="true">4.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../commands/map.html"><strong aria-hidden="true">4.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../commands/misc.html"><strong aria-hidden="true">4.3.</strong> misc</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../index.html">intro</a></li><li class="chapter-item expanded "><a href="../../installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="../../works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="../../configuration.html"><strong aria-hidden="true">3.</strong> configuration (cli only)</a></li><li class="chapter-item expanded "><a href="../../commands/index.html"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../commands/cli/index.html"><strong aria-hidden="true">4.1.</strong> cli</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../commands/cli/habit.html"><strong aria-hidden="true">4.1.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../../commands/cli/map.html"><strong aria-hidden="true">4.1.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../../commands/cli/acc.html"><strong aria-hidden="true">4.1.3.</strong> acc</a></li><li class="chapter-item expanded "><a href="../../commands/cli/misc.html" class="active"><strong aria-hidden="true">4.1.4.</strong> misc</a></li></ol></li><li class="chapter-item expanded "><a href="../../commands/dcbot/index.html"><strong aria-hidden="true">4.2.</strong> discord bot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../commands/dcbot/habit.html"><strong aria-hidden="true">4.2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../../commands/dcbot/map.html"><strong aria-hidden="true">4.2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../../commands/dcbot/acc.html"><strong aria-hidden="true">4.2.3.</strong> acc</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -113,7 +113,7 @@
                     <h1 class="menu-title">habitmap docs</h1>
 
                     <div class="right-buttons">
-                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
                             <i id="print-button" class="fa fa-print"></i>
                         </a>
 
@@ -142,99 +142,46 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="habit"><a class="header" href="#habit">habit</a></h1>
-<p>this page will explain the &quot;habit&quot; command.</p>
-<p>to refer to the definition/description of any value type, see <a href="index.html/#value-types">commands</a>.</p>
-<h2 id="-a---add"><a class="header" href="#-a---add">-a, --add</a></h2>
-<p>usage: <code>hbmp habit -a [name]</code></p>
-<p>adds a new habit with name [name] to the database.</p>
-<pre><code>$ hbmp habit -a habit1
-    habit 'habit1' added.
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
-<tr><td>name</td><td>string</td></tr>
-</tbody></table>
-</div>
-<h2 id="-r---remove"><a class="header" href="#-r---remove">-r, --remove</a></h2>
-<p>usage: <code>hbmp habit -r [name]</code></p>
-<p>adds a new habit with name [name] to the database.</p>
-<pre><code>$ hbmp habit -r habit1
-    habit 'habit1' removed.
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
-<tr><td>name</td><td>habit</td></tr>
-</tbody></table>
-</div>
-<h2 id="-t---track"><a class="header" href="#-t---track">-t, --track</a></h2>
-<p>usage: <code>hbmp habit -t [day] ([habit] [number])</code></p>
-<p>adds or edits the record of habit [habit] on [day] and changes it to [number].</p>
-<p>example with 4-step habit1 and 3-step habit2 on 1969-06-09:</p>
-<pre><code>$ hbmp habit -t tdy habit1 4
-    value of habit habit1 on 1969-06-09 changed to 4 of 4.
+                        <h1 id="misc"><a class="header" href="#misc">misc</a></h1>
+<p>this page will explain all other commands.</p>
+<p>to refer to the definition/description of any value type, see <a href="https://shuu-wasseo.github.io/habitmap-docs/commands/index.html">commands</a>.</p>
+<h2 id="help"><a class="header" href="#help">help</a></h2>
+<p>usage: <code>hbmp help</code></p>
+<p>this command prints out a comprehensive guide (although not as comprehensive as this site) on each command and how to use it.</p>
+<h2 id="samplecolors"><a class="header" href="#samplecolors">samplecolors</a></h2>
+<p>usage: <code>hbmp samplecolors ([colors])</code></p>
+<p>this command prints out colored text with either all colors in the config file or the given colors to allow the user to see if the colors work or fit well with their terminal.</p>
+<p>if left blank, this command defaults to all colors listed in the config file.</p>
+<pre><code>$ cat config.toml
+stepno = 4
+defcol = &quot;ffffff&quot;
+cols = [
+    [&quot;heejin&quot;, &quot;fc0099&quot;],
+    [&quot;hyunjin&quot;, &quot;ffcc00&quot;],
+    [&quot;haseul&quot;, &quot;00ff7b&quot;],
+    [&quot;yeojin&quot;, &quot;ff6e14&quot;],
+    [&quot;vivi&quot;, &quot;ff98b4&quot;]
+]
 
-$ hbmp habit -t yst habit2 2
-    value of habit habit2 on 1969-06-08 changed to 2 of 3 (3 in 4-step).
+$ hbmp samplecolors
 </code></pre>
-<p>if [habit] and [stepno] are left blank, you will be prompted to enter a number for every habit that you have.</p>
-<pre><code>$ hbmp habit -t tdy
-    habit1 (4)? 4
-    value of habit habit1 on 1969-06-09 changed to 4 of 4.
-    habit2 (3)? 3
-    value of habit habit2 on 1969-06-09 changed to 2 of 3 (3 in 4-step).
+<p>the output of samplecolors will be multiple lines, each having &quot;██ [name] ([hex code if not 4-bit])&quot; in the color assigned to [name]. in this case:
+<img src="samplecolors.jpg" alt="(sample) output of &quot;hbmp samplecolors&quot;. due to site limitations, we will only be able to display the output through an image." /></p>
+<p>if not left blank, this command will taken an unlimited amount of colors.</p>
+<pre><code>$ hbmp samplecolors red green blue
 </code></pre>
-<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
-<tr><td>day</td><td>day</td></tr>
-<tr><td>habit</td><td>habit</td></tr>
-<tr><td>number</td><td>number from 0 to [habit]'s stepno.</td></tr>
-</tbody></table>
-</div>
-<h2 id="-l---list"><a class="header" href="#-l---list">-l, --list</a></h2>
-<p>usage: <code>hbmp habit -l</code></p>
-<p>lists all habits.</p>
-<p>example with two habits, habit 1 and habit 2:</p>
-<pre><code>$ hbmp habit -l
-    you have the following habits:
-    - habit1
-    - habit2
-</code></pre>
-<h2 id="-m---move"><a class="header" href="#-m---move">-m, --move</a></h2>
-<p>usage: <code>hbmp habit -m [habit] [habit2]</code></p>
-<p>moves [habit1] from its origial position to right after [habit2], then prints out the list of habits (like in habit -l).</p>
-<pre><code>$ hbmp habit -l
-    you have the following habits:
-    - habit1
-    - habit2
+<p>this time, the output will be in a similar format as before.</p>
+<p><img src="samplecolors2.jpg" alt="another (sample) output of &quot;hbmp samplecolors&quot;. due to site limitations, we will only be able to display the output through an image." /></p>
 
-$ hbmp habit -m habit1 habit2
-    you have the following habits:
-    - habit2
-    - habit1
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
-<tr><td>habit1, habit2</td><td>habit</td></tr>
-</tbody></table>
-</div>
-<h2 id="-s---steps"><a class="header" href="#-s---steps">-s, --steps</a></h2>
-<p>usage: <code>hbmp habit -s [habit] [stepno]</code></p>
-<p>sets the default number of steps for [habit] to [stepno].
-having one step would mean that you either have or have not done the habit but having more steps allows you to indicate anything in between.</p>
-<pre><code>$ hbmp habit -s habit1 4
-    stepno for habit1 changed to 4.
-</code></pre>
-<div class="table-wrapper"><table><thead><tr><th>value</th><th>type</th></tr></thead><tbody>
-<tr><td>habit</td><td>habit</td></tr>
-<tr><td>stepno</td><td>stepno</td></tr>
-</tbody></table>
-</div>
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="../commands/index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="../../commands/cli/acc.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../commands/map.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../../commands/dcbot/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -244,11 +191,11 @@ having one step would mean that you either have or have not done the habit but h
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="../commands/index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="../../commands/cli/acc.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../commands/map.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../../commands/dcbot/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
@@ -279,13 +226,13 @@ having one step would mean that you either have or have not done the habit but h
         </script>
 
 
-        <script src="../elasticlunr.min.js" charset="utf-8"></script>
-        <script src="../mark.min.js" charset="utf-8"></script>
-        <script src="../searcher.js" charset="utf-8"></script>
+        <script src="../../elasticlunr.min.js" charset="utf-8"></script>
+        <script src="../../mark.min.js" charset="utf-8"></script>
+        <script src="../../searcher.js" charset="utf-8"></script>
 
-        <script src="../clipboard.min.js" charset="utf-8"></script>
-        <script src="../highlight.js" charset="utf-8"></script>
-        <script src="../book.js" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" charset="utf-8"></script>
+        <script src="../../highlight.js" charset="utf-8"></script>
+        <script src="../../book.js" charset="utf-8"></script>
 
         <!-- Custom JS scripts -->
 

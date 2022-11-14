@@ -1,6 +1,5 @@
-# configuration
-
-you can use the config.toml file to configure habitmap. currently, there are only three things to configure.
+# configuration (cli only)
+you can use the config.toml file to configure cli habitmap. currently, there are only three things to configure.
 
 ## default stepno
 default value: `stepno = 4`

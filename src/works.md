@@ -59,10 +59,10 @@ heatmaps are a form of data presentation. according to oxford languages, heatmap
 
 while there are many types of heatmaps, habitmap only uses the following three.
 
-| heatmap | x-axis / column | y-axis / row | command (hbmp map) | description |
-|:-------:|:---------------:|:------------:|:------------------:|:-----------:|
-| daily   | day             | habit        | -d / --day         | allows you to see your progress in committing to each habit across multiple days.
-| average per duration | duration (week/month/year) | habit | -b / --bydur | similar to the daily heatmap, but you can view your average across a few weeks or months to more easily visualise long-term progress.
-| yearly calendar | week    | day of the week | -y / --year     | similar to the github contributions heatmap at the bottom of the user profile, but only allows **one** habit and across **one** year.
+| heatmap | x-axis / column | y-axis / row | cli (hbmp map) | discord bot | description |
+|:-------:|:---------------:|:------------:|:----------------------:|:-------------------:|:-----------:|
+| daily   | day             | habit        | -d / --day             | /durm               | allows you to see your progress in committing to each habit across multiple days.
+| average per duration | duration (week/month/year) | habit | -b / --bydur | /durm        | similar to the daily heatmap, but you can view your average across a few weeks or months to more easily visualise long-term progress.
+| yearly calendar | week    | day of the week | -y / --year         | /yearm              | similar to the github contributions heatmap at the bottom of the user profile, but only allows **one** habit and across **one** year.
 
 for more details on how to use these, see [map](commands/map.md).
