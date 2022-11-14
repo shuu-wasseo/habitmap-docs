@@ -1,12 +1,12 @@
 # map
 this page will explain the "map" command.
 
-to refer to the definition/description of any value type, see [commands](index.html/#value-types).
+to refer to the definition/description of any value type, see [commands](https://shuu-wasseo.github.io/habitmap-docs/commands/index.html).
 
 ## -d, --day
 usage:`hbmp map -d [start] [end] ([colors])` 
 
-displays a single bar of each habit's data from [start] to [end] as well as the overall completion of each day's habits, optionally in [colors].
+displays one bar per day of each habit's data from [start] to [end] as well as the overall completion of each day's habits, optionally in [colors].
 
 example with 4-step habit1 and 3-step habit2 on 1969-4-20:
 ```

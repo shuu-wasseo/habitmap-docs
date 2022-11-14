@@ -1,7 +1,7 @@
 # habit
 this page will explain the "habit" command.
 
-to refer to the definition/description of any value type, see [commands](index.html/#value-types).
+to refer to the definition/description of any value type, see [commands](https://shuu-wasseo.github.io/habitmap-docs/commands/index.html).
 
 ## -a, --add 
 
@@ -16,11 +16,15 @@ $ hbmp habit -a habit1
 | ----- | ---- |
 | name  | string |
 
+discord equivalent:
+
+`/edith`
+
 ## -r, --remove
 
 usage: `hbmp habit -r [name]`
 
-adds a new habit with name [name] to the database.
+removes the habit with name [name] from the database.
 ```
 $ hbmp habit -r habit1
     habit 'habit1' removed.
@@ -28,6 +32,10 @@ $ hbmp habit -r habit1
 | value | type |
 | ----- | ---- |
 | name  | habit |
+
+discord equivalent:
+
+`/edith`
 
 ## -t, --track 
 
@@ -56,7 +64,11 @@ $ hbmp habit -t tdy
 | -----  | ---- |
 | day    | day  |
 | habit  | habit |
-| number | number from 0 to [habit]'s stepno. | 
+| number | number from 0 to [habit]'s stepno. |
+
+discord equivalent:
+
+`/trackh`
 
 ## -l, --list
 
@@ -71,6 +83,10 @@ $ hbmp habit -l
     - habit1
     - habit2
 ```
+
+discord equivalent:
+
+`/listh`
 
 ## -m, --move
 
@@ -94,6 +110,10 @@ $ hbmp habit -m habit1 habit2
 | -----           | ---- |
 | habit1, habit2  | habit |
 
+discord equivalent:
+
+`/moveh`
+
 ## -s, --steps
 
 usage: `hbmp habit -s [habit] [stepno]`
@@ -110,3 +130,7 @@ $ hbmp habit -s habit1 4
 | -----  | ---- |
 | habit  | habit |
 | stepno | stepno |
+
+discord equivalent:
+
+`/steph`

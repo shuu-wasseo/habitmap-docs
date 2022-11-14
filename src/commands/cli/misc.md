@@ -1,7 +1,7 @@
 # misc
 this page will explain all other commands.
 
-to refer to the definition/description of any value type, see [commands](index.html/#value-types).
+to refer to the definition/description of any value type, see [commands](https://shuu-wasseo.github.io/habitmap-docs/commands/index.html).
 
 ## help
 usage: `hbmp help`
@@ -32,8 +32,9 @@ the output of samplecolors will be multiple lines, each having "██ [name] ([
 ![(sample) output of "hbmp samplecolors". due to site limitations, we will only be able to display the output through an image.](samplecolors.jpg)
 
 if not left blank, this command will taken an unlimited amount of colors.
-``````
+```
 $ hbmp samplecolors red green blue
 ```
 this time, the output will be in a similar format as before.
+
 ![another (sample) output of "hbmp samplecolors". due to site limitations, we will only be able to display the output through an image.](samplecolors2.jpg)
