@@ -81,7 +81,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">intro</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="../works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="../configuration.html"><strong aria-hidden="true">3.</strong> configuration</a></li><li class="chapter-item expanded "><a href="../commands/index.html" class="active"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/habit.html"><strong aria-hidden="true">4.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../commands/map.html"><strong aria-hidden="true">4.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../commands/misc.html"><strong aria-hidden="true">4.3.</strong> misc</a></li></ol></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../index.html">intro</a></li><li class="chapter-item expanded "><a href="../installation.html"><strong aria-hidden="true">1.</strong> installation</a></li><li class="chapter-item expanded "><a href="../works.html"><strong aria-hidden="true">2.</strong> how it works</a></li><li class="chapter-item expanded "><a href="../configuration.html"><strong aria-hidden="true">3.</strong> configuration (cli only)</a></li><li class="chapter-item expanded "><a href="../commands/index.html" class="active"><strong aria-hidden="true">4.</strong> commands</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cli/index.html"><strong aria-hidden="true">4.1.</strong> cli</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/cli/habit.html"><strong aria-hidden="true">4.1.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../commands/cli/map.html"><strong aria-hidden="true">4.1.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../commands/cli/acc.html"><strong aria-hidden="true">4.1.3.</strong> acc</a></li><li class="chapter-item expanded "><a href="../commands/cli/misc.html"><strong aria-hidden="true">4.1.4.</strong> misc</a></li></ol></li><li class="chapter-item expanded "><a href="../commands/dcbot/index.html"><strong aria-hidden="true">4.2.</strong> discord bot</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../commands/dcbot/habit.html"><strong aria-hidden="true">4.2.1.</strong> habit</a></li><li class="chapter-item expanded "><a href="../commands/dcbot/map.html"><strong aria-hidden="true">4.2.2.</strong> map</a></li><li class="chapter-item expanded "><a href="../commands/dcbot/acc.html"><strong aria-hidden="true">4.2.3.</strong> acc</a></li></ol></li></ol></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
         </nav>
@@ -143,48 +143,25 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="commands"><a class="header" href="#commands">commands</a></h1>
-<p>here is the full list of commands as seen when running hbmp with no commands or arguments.</p>
-<pre><code>usage: hbmp [command] ([subcommand] [parameters] ([options]))
-
-list of commands, parameters and options:
-command:
--a, --arg.      [parameter]                 ([option])              description
-
-habit:
--a, --add       [name]                                              add a new habit (if not already existing).
--r, --remove    [habit]                                             remove a habit.
--t, --track     [day]                       ([habit] [number])      add or edit a record.
--l, --list                                                          list all habits.
--m, --move      [habit] [habit2]                                    moves one habit after another habit.
--s, --steps     [habit] [stepno]                                    set the default number of steps in heatmap (number from 1-4)
-
-map:
--d, --day       [start] [end]               ([colors])              view heatmap for all habits from one day to another.
--m, --month     [start] [end]               ([colors])              view heatmap for all habits from the start of a month to the beginning of another.
--y, --year      [year] [habit]              ([colors])              view yearly calendar heatmap for a habit.
--b, --bydur     [start] [end] [duration]    ([colors])              view heatmap based on average of week/month/year.
-
-help:                                                               see all commands and explanations.
-
-samplecolors:                               ([colors])              see all custom colors or the given colors in the terminal.
-</code></pre>
-<p>these four commands will be split into three pages.</p>
+<p>due to habitmap having a cli version and a discord bot version (habitmap-bot), we will separate the two command documentations although both versions support the same purpose. 
+this also allows us to make way for documentation of the tty version of habitmap, if or when it is made.</p>
+<h2 id="sections"><a class="header" href="#sections">sections</a></h2>
 <ol>
-<li><a href="habit.html">habit</a></li>
-<li><a href="map.html">map</a></li>
-<li><a href="misc.html">misc</a></li>
+<li><a href="cli/README.html">cli</a></li>
+<li><a href="dcbot/README.html">discord bot</a></li>
 </ol>
 <h2 id="value-types"><a class="header" href="#value-types">value types</a></h2>
 <p>in the parameters and options lists, multiple types of values can be seen.</p>
-<div class="table-wrapper"><table><thead><tr><th>value type</th><th>parameters/options</th><th>description</th></tr></thead><tbody>
-<tr><td>string</td><td>[name] (habit -a)</td><td>any string.</td></tr>
-<tr><td>habit</td><td>[habit]/[habit2] (habit -r/t/m/s, map -y)</td><td>name of any existing habit.</td></tr>
-<tr><td>number</td><td>[number] (habit -t), [stepno] (habit -s)</td><td>any number from 0-4 as long as it is below the habit's stepno.</td></tr>
-<tr><td>stepno</td><td>[stepno] (habit -s)</td><td>any number from 1-4.</td></tr>
-<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>any hex code without the preceding '#'<sup class="footnote-reference"><a href="#1">1</a></sup>, any <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit">4-bit colors</a> or any <a href="https://shuu-wasseo.github.io/habitmap-docs/configuration.html#custom-colors">custom color names</a>.</td></tr>
-<tr><td>day</td><td>[day] (habit -t), [start]/[end] (map -d/b)</td><td>any date in ISO format (YYYY-MM-DD), 'tdy', 'yst' or the first three letters of any day in the week.</td></tr>
-<tr><td>month</td><td>[start]/[end] (map -m/b)</td><td>any month in ISO format. (YYYY-MM, date without last two digits / day)</td></tr>
-<tr><td>year</td><td>[start]/[end] (map -y/b)</td><td>any year from 1 - 9999 AD. (without the 'AD')</td></tr>
+<div class="table-wrapper"><table><thead><tr><th>value type</th><th>cli parameters/options</th><th>discord bot parameters/options</th><th>description</th></tr></thead><tbody>
+<tr><td>string</td><td>[name] (habit -a), [new] (acc -e)</td><td>[type] (/edith) [username]/[password] (/login, /signup, /edita, /dela)</td><td>any string.</td></tr>
+<tr><td>habit</td><td>[habit]/[habit2] (habit -r/t/m/s, map -y)</td><td>[habit] (/edith, /trackh, /moveh, /steph, /yearm)</td><td>name of any existing habit.</td></tr>
+<tr><td>credential</td><td>[credential] (acc -e)</td><td>[credential] (/edita)</td><td>&quot;username&quot; or &quot;password&quot;.</td></tr>
+<tr><td>number</td><td>[number] (habit -t)</td><td>[number] (/trackh)</td><td>any number from 0-4.</td></tr>
+<tr><td>stepno</td><td>[stepno] (habit -s)</td><td>[stepno] (/steph)</td><td>any number from 1-4.</td></tr>
+<tr><td>color</td><td>[colors] (map -d/m/y/b, samplecolors)</td><td>n/a (colors not supported)</td><td>any hex code without the preceding '#'<sup class="footnote-reference"><a href="#1">1</a></sup>, any <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#3-bit_and_4-bit">4-bit colors</a> or any <a href="https://shuu-wasseo.github.io/habitmap-docs/configuration.html#custom-colors">custom color names</a>.</td></tr>
+<tr><td>day</td><td>[day] (habit -t), [start]/[end] (map -d/b)</td><td>[day] (/trackh), [start]/[end] (/durm)</td><td>any date in ISO format (YYYY-MM-DD), 'tdy', 'yst' or the first three letters of any day in the week.</td></tr>
+<tr><td>month</td><td>[start]/[end] (map -b)</td><td>[start]/[end] (/durm)</td><td>any month in ISO format. (YYYY-MM, date without last two digits / day)</td></tr>
+<tr><td>year</td><td>[start]/[end] (map -y/b)</td><td>[start]/[end] (/durm, /yearm)</td><td>any year from 1 - 9999 AD. (without the 'AD')</td></tr>
 </tbody></table>
 </div>
 <div class="footnote-definition" id="1"><sup class="footnote-definition-label">1</sup>
@@ -199,7 +176,7 @@ samplecolors:                               ([colors])              see all cust
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next" href="../commands/habit.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next" href="../commands/cli/index.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -213,7 +190,7 @@ samplecolors:                               ([colors])              see all cust
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next" href="../commands/habit.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next" href="../commands/cli/index.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>
